@@ -34,3 +34,32 @@ Logo, os arquivos `.env`, `main.py`, `keep_alive.py`, `movidesk.py` e `words.py`
 - [keep_alive.py](https://github.com/Alfareiza/discordbot-movidesk/blob/main/keep_alive.py): Arquivo necessário para que o bot fique sendo executado e online sempre. 
 - [movidesk.py](https://github.com/Alfareiza/discordbot-movidesk/blob/main/movidesk.py): Módulo com tratamentos e chamados próprios do movidesk.
 - [words.py](https://github.com/Alfareiza/discordbot-movidesk/blob/main/words.py): Módulo com palavras-chave e informações obtidas manualmente no movidesk.
+
+## Escopo do Bot
+
+#### Tickets Específicos
+`!numero_do_ticket`: Serão exibido os detalhes de um ticket.
+Ex.: `!10131`
+
+#### Tickets em Geral
+`$tickets`: Serão exibidos todos os tickets ativos, sendo os ativos os tickets que estão dict TICKETS_WORDS['actives'] por Agente.
+Ex.: `$tickets`
+
+#### Filtros por Agente, Status e Categoría
+Agente:`+agente1`, `+agente2`, `+agente3`, `+agente4`, `+agente5`, `+agente6` e `+agente7`.
+Estado: `+status1`, `+status2`, `+status3`, `+status4`, e `+status5`.
+Categoria: `+categoria1`, `+categoria2`, `+categoria3`, `+categoria4` e `+categoria5`.
+Os dados anteriores são carregados do arquivo [words.py](https://github.com/Alfareiza/discordbot-movidesk/blob/main/words.py)
+Exemplos:
+`$tickets +agente1` | `$ticks +agente5 +categoria1` 
+`$tickets +categoria3`  | `$tckts +agente3 +status1 +categoria4 -msg`
+`$ticks +status4`  | `$tckts +status3 +categoria1 +agente2`
+
+#### Atalhos
+`$mistickets` ou `$meustickets`: Os tickets atribuidos a você serão exibidos, se você for um agente.
+
+#### Mensagem Privado
+Você pode enviar uma mensagem direta para o Bot, mas também pode enviar uma mensagem pública e digitar `-msg` para receber o resultado numa mensagem só para você.
+Exemplo: `$meustickets -msg`
+
+#### O Bot não traz informações ao discord se você não solicita. Ou seja que ele não fica monitorando e disparando alertas ao discord, segundo determinados critérios. 
